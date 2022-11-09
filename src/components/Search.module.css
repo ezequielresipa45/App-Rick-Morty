@@ -1,0 +1,15 @@
+.conteinerSearch {
+  display: flex;
+  gap: 25px;
+}
+
+.conteinerSearch input {
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.conteinerSearch button {
+  border: none;
+  background-color: rgb(92, 244, 78);
+  color: rgb(0, 0, 0);
+}

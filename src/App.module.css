@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+  
+}
+
+.contenedor {
+  background-image: url(./images/estrallas.jfif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  height: 100vh;
+}
+
+
+
+
+.containerCards{
+
+  padding: 10px 40px;
+  margin: 40px 20px;
+  width: 91.5%;
+
+
+}
+

@@ -1,0 +1,53 @@
+.containerCard {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow: hidden;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: -2px 0px 14px -4px rgba(255, 255, 255, 0.97);
+  -webkit-box-shadow: -2px 0px 14px -4px rgba(255, 255, 255, 0.97);
+  -moz-box-shadow: -2px 0px 14px -4px rgba(255, 255, 255, 0.97);
+}
+
+.contenedorButton {
+}
+
+.buttonClick {
+  background-color: red;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 4px;
+  width: 30px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  margin: 8px;
+  border: 1px solid black;
+}
+
+.containerImage {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.containerImage h2 {
+  position: absolute;
+  top: 85%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.475);
+  padding: 2px;
+}
+
+.containerDates {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
