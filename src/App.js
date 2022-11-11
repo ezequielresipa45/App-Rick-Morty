@@ -3,9 +3,10 @@ import Cards from "./components/Cards.jsx";
 import styles from "./App.module.css";
 import Nav from "./components/Nav.jsx";
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import About from "./components/About.jsx";
 import Detail from "./components/Detail.jsx";
+import Forms from "./components/Forms.jsx";
 
 function App() {
   const [character, setCharacters] = useState([]);
@@ -37,13 +38,26 @@ function App() {
     setCharacters(filtroArreglo);
   };
 
+  const location = useLocation();
+
+console.log(location);
+
+if(location.pathname === '/' ){
+
   return (
     <div className={styles.contenedor}>
-      <Nav onSearch={onSearch} />
+      {/* <Nav onSearch={onSearch} /> */}
 
       <Routes>
+
+
+
+      <Route path="/" element={<Forms />} />
+
+
+
         <Route
-          path="/"
+          path="/home"
           element={
             <div className={styles.containerCards}>
               <Cards characters={character} onClose={onClose} />
@@ -56,7 +70,54 @@ function App() {
         <Route path="/detail/:detailId" element={<Detail />} />
       </Routes>
     </div>
-  );
+  ) 
+
+
+
+
+}else{
+
+
+
+
+  return (
+    <div className={styles.contenedor}>
+      <Nav onSearch={onSearch} />
+
+      <Routes>
+
+
+
+      <Route path="/" element={<Forms />} />
+
+
+
+        <Route
+          path="/home"
+          element={
+            <div className={styles.containerCards}>
+              <Cards characters={character} onClose={onClose} />
+            </div>
+          }
+        />
+
+        <Route path="/about" element={<About />} />
+
+        <Route path="/detail/:detailId" element={<Detail />} />
+      </Routes>
+    </div>
+  ) 
+
+
+
+
+
+
+
+
+  
+}
+
 }
 
 export default App;
