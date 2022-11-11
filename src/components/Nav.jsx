@@ -12,6 +12,10 @@ export default function Nav(props) {
         <p>Home</p>
       </Link>
 
+<button onClick={props.logout}>Logout</button>
+      
+
+
       <div className={styles.contenedorOnSearch}>
         <SearchBar onSearch={props.onSearch} />
       </div>

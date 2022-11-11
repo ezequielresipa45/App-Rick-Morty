@@ -20,7 +20,7 @@ function validate(inputs) {
 }
 
 
-export default function Forms() {
+export default function Forms({login}) {
 
 const [userDate, setUserDate] = useState({
 
@@ -38,7 +38,11 @@ const [errors, setErrors] = useState({
 
 
 
-
+const handleSubmit = (e)=>{
+e.preventDefault();
+  login(userDate)
+ 
+}
 
 
 const handleInputChange = (e) => {
@@ -53,6 +57,8 @@ setErrors(validate({...userDate, [e.target.name] : e.target.value}))
 
 
   return (
+
+    <form onSubmit={handleSubmit}>
     <div className={style.containerLogin}>
 
 <label htmlFor="">UserName</label>
@@ -66,10 +72,11 @@ setErrors(validate({...userDate, [e.target.name] : e.target.value}))
 <input className={errors.password && style.warning} type="password" name="password" onChange={handleInputChange} value = {userDate.password} />
 {errors.password && <p>{errors.password}</p>}
 
-<button>Ingresar</button>
+<button type='submit'>Ingresar</button>
 
 
 
     </div>
+    </form>
   )
 }
