@@ -9,10 +9,13 @@ import Detail from "./components/Detail.jsx";
 import Forms from "./components/Forms.jsx";
 
 function App() {
+
+
   const navigate = useNavigate();
+  
   const [access, setAccess] = useState(false); // SETEA SI EL USUARIO EXISTE O NO PARA DARLE ACCESO A LA WEB
   const username = "ezequielresipa45@gmail.com";
-  const password = "Eze19955!";
+  const password = "Eze1554!";
 
 
   // ESTE USE EFFECTS EVITA QUE EL USUARIO NAVEGE POR LA PAGINA, HASTA QUE EL ACCESO SEA EL CORRECTO.
@@ -21,7 +24,7 @@ function App() {
   }, [access, navigate]);
 
 
-  // FUNCION QUE SE PARA POR PROPS AL FORMS, CHEQUEA SI EL PASSWORD Y EL USUARIO COICIDEN CON EL USER - PASS DE LA BASE DE DATOS FICTISIA.
+  // FUNCION QUE SE PASA POR PROPS AL FORMS, CHEQUEA SI EL PASSWORD Y EL USUARIO COICIDEN CON EL USER - PASS DE LA BASE DE DATOS FICTISIA.
   function login(userData) {
     if (username === userData.username && password === userData.password) {
       setAccess(true);
@@ -71,6 +74,8 @@ function App() {
     setCharacters(filtroArreglo);
   };
 
+
+
   const location = useLocation();
 
   // console.log(location);
@@ -78,23 +83,10 @@ function App() {
   if (location.pathname === "/") {
     return (
       <div className={styles.contenedor}>
-        {/* <Nav onSearch={onSearch} /> */}
+        
 
         <Routes>
           <Route path="/" element={<Forms login={login} />} />
-
-          <Route
-            path="/home"
-            element={
-              <div className={styles.containerCards}>
-                <Cards characters={character} onClose={onClose} />
-              </div>
-            }
-          />
-
-          <Route path="/about" element={<About />} />
-
-          <Route path="/detail/:detailId" element={<Detail />} />
         </Routes>
       </div>
     );
@@ -104,8 +96,7 @@ function App() {
         <Nav onSearch={onSearch} logout = {logout} />
 
         <Routes>
-          <Route path="/" element={<Forms login={login} />} />
-
+          
           <Route
             path="/home"
             element={
