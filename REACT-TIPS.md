@@ -861,3 +861,102 @@ Si queremos deslogearnos crearemos un boton en el nav que recibira una funcion, 
 ```
 
 Le diremos que si el acceso es verdadero entonces setee el acceso a falso, esto hará que nos redirija al login nuevamente.
+
+
+
+<br />
+
+---
+
+## **Redux** - 
+**Gramática:**
+
+Instalamos `npm i redux@4.0.5`
+```js
+
+const redux  = require('redux'); // Requerimos redux
+
+
+// Inicializamos el estado de objetos.
+const initialState = {
+
+    num:0,
+    visibility: true,
+    name: '',
+    friends: []        
+}
+
+// El encargado de enviarle al state nuestros pedidos o cambios que querramos hacer.
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+
+        case 'CAMBIAR_NOMBRE':
+          return{
+              ...state,
+            name: action.payload
+          };
+
+          case 'ADD_FRIEND':
+            return{
+                ...state,
+                friends: [...state.friends, action.payload]
+            }
+
+            case 'AUMENTAR':
+                return{
+                    ...state,
+                    num: state.num + 1
+                }
+
+          default:
+            return{
+                ...state
+            }
+
+}
+
+
+// Creamos el store
+const store = redux.createStore(reducer);
+
+
+// dispatch() => va a despachar nuestra accion (el mensajito) al reducer y el se encargara de pasarlo al state.
+
+// getState() => Nos muestra el state actual.
+
+
+
+// Action Creator
+
+const cambiarNombre = (name)=>{
+    return{
+        type: 'CAMBIAR_NOMBRE',
+        payload: name
+    }
+}
+
+const addFriend = (friend)=>{
+    return{
+        type: 'ADD_FRIEND',
+        payload: friend
+    }
+}
+
+const action = {
+    type: 'AUMENTAR'
+}
+
+
+// Ahora debemos hacer el dispatch para que las actions llegen al reducer.
+
+
+store.dispatch(cambiarNombre('Ezequiel'));
+
+store.dispatch(addFriend('Luis'));
+store.dispatch(addFriend('Pedro'));
+store.dispatch(addFriend('Mateo'));
+
+store.dispatch(action);
+
+
+```
