@@ -7,6 +7,7 @@ import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from "./components/About.jsx";
 import Detail from "./components/Detail.jsx";
 import Forms from "./components/Forms.jsx";
+import Favorites from "./components/Favorites.jsx";
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
   
   const [access, setAccess] = useState(false); // SETEA SI EL USUARIO EXISTE O NO PARA DARLE ACCESO A LA WEB
   const username = "ezequielresipa45@gmail.com";
-  const password = "Eze1554!";
+  const password = "Eze1995!";
 
 
   // ESTE USE EFFECTS EVITA QUE EL USUARIO NAVEGE POR LA PAGINA, HASTA QUE EL ACCESO SEA EL CORRECTO.
@@ -107,6 +108,7 @@ function App() {
           />
 
           <Route path="/about" element={<About />} />
+          <Route path="/favorites" element={<Favorites />} />
 
           <Route path="/detail/:detailId" element={<Detail />} />
         </Routes>

@@ -1,0 +1,14 @@
+
+.containerPadre{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    gap: 50px
+}
+
+.container{
+    background-color: aliceblue;
+    color: #000;
+}

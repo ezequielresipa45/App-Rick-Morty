@@ -11,6 +11,9 @@ export default function Nav(props) {
       <Link to="/home">
         <p>Home</p>
       </Link>
+      <Link to="/favorites">
+        <p>Favorites</p>
+      </Link>
 
 <button onClick={props.logout}>Logout</button>
       
