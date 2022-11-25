@@ -439,12 +439,17 @@ Fuera de nuestro componente, creemos una funcion validadora que recibira por PAR
 Dentro de ella creemos un objeto vacio que luego retornaremos....
 
 ```js
+
+// SI NO FUNCIONA ASI, EN VEZ DE ELSE IF QUE SEAN TODOS IF... 
+
 function validate(inputs) {
   let errors = {};
 
   if (!validationUserName(inputs.username)) {
     errors.username = "Debe ingresar un correo electronico válido";
-  } else if (!validationPass(inputs.password)) {
+  } 
+  
+  if (!validationPass(inputs.password)) {
     errors.password =
       "El password debe tener una letra Mayuscula, un caracter especial, un numero y minimo 8 caracteres";
   }
@@ -745,7 +750,7 @@ Supongamos que querramos traer usuarios de una API, en las accions usariamos lo 
 
 export const getUser = () => {
   return function (dispatch) {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    return fetch("https://jsonplaceholder.typicode.com/users")
     .then((response) =>response.json())
     .then((data) => dispatch({type: 'GET_USERS', payload: data})) 
   };

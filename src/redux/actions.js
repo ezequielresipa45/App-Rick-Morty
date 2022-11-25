@@ -5,10 +5,16 @@ export const addPersonaje = (name) => {
   };
 };
 
-
 export const deletePersonaje = (id) => {
-    return {
-      type: "DELETE_PERSONAJE",
-      payload: id,
-    };
+  return {
+    type: "DELETE_PERSONAJE",
+    payload: id,
   };
+};
+
+export const filterCards = (status) => {
+  return {
+    type: "FILTER",
+    payload: status,
+  };
+};
