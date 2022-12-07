@@ -18,6 +18,8 @@
         Usuario: admin@prueba.com
         Pass: admin
         
+        Si clonas el repo, no olvides hacer NPM I para instalar todas las dependencias que usé...
+        Luego dale a NPM START, para levantar el servidor.
      
 
 
