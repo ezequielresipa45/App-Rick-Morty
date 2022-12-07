@@ -61,18 +61,19 @@ setErrors(validate({...userDate, [e.target.name] : e.target.value}))
     <form onSubmit={handleSubmit}>
     <div className={style.containerLogin}>
 
-<label htmlFor="">UserName</label>
-<input className={errors.username && style.warning} type="text" name='username' onChange={handleInputChange} value = {userDate.username}/>
-{errors.username && <p>{errors.username}</p>}
+<p>Log In!</p>
+
+
+<input title='Pruebe con admin' placeholder='Usuario' className={errors.username && style.warning} type="text" name='username' onChange={handleInputChange} value = {userDate.username} autoComplete='sds'/>
+{errors.username && <p  className={style.errors}>{errors.username}</p>}
 
 
 
 
-<label htmlFor="">Password</label>
-<input className={errors.password && style.warning} type="password" name="password" onChange={handleInputChange} value = {userDate.password} />
-{errors.password && <p>{errors.password}</p>}
+<input placeholder='Password' className={errors.password && style.warning} type="password" name="password" onChange={handleInputChange} value = {userDate.password} autoComplete='sds'/>
+{errors.password && <p className={style.errors}>{errors.password}</p>}
 
-<button type='submit'>Ingresar</button>
+<button type='submit'>LOGIN</button>
 
 
 

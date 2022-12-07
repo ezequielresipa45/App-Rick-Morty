@@ -6,15 +6,17 @@ import { useState, useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from "./components/About.jsx";
 import Detail from "./components/Detail.jsx";
-import Forms from "./components/Forms.jsx";
 import Favorites from "./components/Favorites.jsx";
+import Forms from "./components/Forms.jsx";
+import 'animate.css';
+import gif from './images/gifRickAndMorty.gif'
 
 function App() {
   const navigate = useNavigate();
 
   const [access, setAccess] = useState(false); // SETEA SI EL USUARIO EXISTE O NO PARA DARLE ACCESO A LA WEB
-  const username = "admin";
-  const password = "admin";
+  const username = "admin@prueba.com";
+  const password = "Admin123!";
 
   // ESTE USE EFFECTS EVITA QUE EL USUARIO NAVEGE POR LA PAGINA, HASTA QUE EL ACCESO SEA EL CORRECTO.
   useEffect(() => {
@@ -67,12 +69,41 @@ function App() {
 
   // console.log(location);
 
+
+
+const [ingresar, setIngresar] = useState(false)
+
+  const ingreso = () =>{
+
+    ingresar ? setIngresar(false) : setIngresar(true)
+
+
+  }
+
   if (location.pathname === "/") {
     return (
       <div className={styles.contenedor}>
-        <Routes>
+        <h1 className="animate__animated animate__pulse animate__infinite">The Rick and Morty APP</h1>
+
+
+
+    <button className={styles.contenedorButton} type='button' onClick={ingreso}>
+      <p>LOGIN <img  width={20} src={gif} alt='gif' /> </p>
+      
+    </button>
+
+
+    
+   { ingresar && 
+          <div className="animate__animated animate__bounceInDown">
+        <Routes >
           <Route path="/" element={<Forms login={login} />} />
         </Routes>
+        </div>
+      }
+
+
+
       </div>
     );
   } else {
