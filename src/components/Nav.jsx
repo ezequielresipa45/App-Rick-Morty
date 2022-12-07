@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default function Nav(props) {
   return (
     <div className={styles.contenedorNav}>
+      
       <Link to="/about">
         <p>About</p>
       </Link>

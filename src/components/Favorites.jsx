@@ -15,19 +15,14 @@ const Favorites = (props) => {
 
   }
 
-console.log(props.allCharacters)
-// console.log(props.myFavorites.filter((personaje)=> personaje.gender === 'Female'))
-
-
-
-
 if(props.allCharacters.length === 0){
   return (
     <div className = {styles.containerPadre}>
 
       <select onChange={handleSelect} name="select"  >
-        <option value="Male" >Male</option>
-        <option value="Female" selected>Female</option>
+      <option selected hidden>Elije un género</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
         <option value="unknown">unknown</option>
         <option value="Genderless">Genderless</option>
       </select>
@@ -51,7 +46,7 @@ if(props.allCharacters.length === 0){
 
       <select onChange={handleSelect} name="select"  >
         <option value="Male" >Male</option>
-        <option value="Female" selected>Female</option>
+        <option value="Female" >Female</option>
         <option value="unknown">unknown</option>
         <option value="Genderless">Genderless</option>
       </select>

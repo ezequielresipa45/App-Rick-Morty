@@ -10,20 +10,16 @@ import Forms from "./components/Forms.jsx";
 import Favorites from "./components/Favorites.jsx";
 
 function App() {
-
-
   const navigate = useNavigate();
-  
-  const [access, setAccess] = useState(false); // SETEA SI EL USUARIO EXISTE O NO PARA DARLE ACCESO A LA WEB
-  const username = "ezequielresipa45@gmail.com";
-  const password = "Eze1995!";
 
+  const [access, setAccess] = useState(false); // SETEA SI EL USUARIO EXISTE O NO PARA DARLE ACCESO A LA WEB
+  const username = "admin";
+  const password = "admin";
 
   // ESTE USE EFFECTS EVITA QUE EL USUARIO NAVEGE POR LA PAGINA, HASTA QUE EL ACCESO SEA EL CORRECTO.
   useEffect(() => {
     !access && navigate("/");
   }, [access, navigate]);
-
 
   // FUNCION QUE SE PASA POR PROPS AL FORMS, CHEQUEA SI EL PASSWORD Y EL USUARIO COICIDEN CON EL USER - PASS DE LA BASE DE DATOS FICTISIA.
   function login(userData) {
@@ -35,16 +31,8 @@ function App() {
     }
   }
 
-
-
-
-    // FUNCION QUE SE LA PASO A UN BOTON EN EL NAV, QUE VA A DESLOGEAR AL USUARIO  
-   const logout = () => access && setAccess(false) 
-
-  
-
-
-
+  // FUNCION QUE SE LA PASO A UN BOTON EN EL NAV, QUE VA A DESLOGEAR AL USUARIO
+  const logout = () => access && setAccess(false);
 
   const [character, setCharacters] = useState([]);
 
@@ -75,8 +63,6 @@ function App() {
     setCharacters(filtroArreglo);
   };
 
-
-
   const location = useLocation();
 
   // console.log(location);
@@ -84,8 +70,6 @@ function App() {
   if (location.pathname === "/") {
     return (
       <div className={styles.contenedor}>
-        
-
         <Routes>
           <Route path="/" element={<Forms login={login} />} />
         </Routes>
@@ -94,10 +78,9 @@ function App() {
   } else {
     return (
       <div className={styles.contenedor}>
-        <Nav onSearch={onSearch} logout = {logout} />
+        <Nav onSearch={onSearch} logout={logout} />
 
         <Routes>
-          
           <Route
             path="/home"
             element={
