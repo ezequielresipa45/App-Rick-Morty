@@ -15,6 +15,4 @@ App React Spa
         Usuario: admin@prueba.com
         Pass: admin
         
-        
-        <p> Hola </p>
-         <img src="../src/images/GifCapRickAndMorty.gif" />
+     
