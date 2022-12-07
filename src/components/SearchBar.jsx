@@ -8,7 +8,7 @@ export default function SearchBar(props) {
 
   return (
     <div className={styles.conteinerSearch}>
-      <input type="search" onChange={handleNames} />
+      <input type="search" onChange={handleNames} placeholder='Ingrese un id..' />
       <button onClick={() => props.onSearch(character)}>Agregar</button>
     </div>
   );

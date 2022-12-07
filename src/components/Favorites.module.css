@@ -2,6 +2,7 @@
 .containerPadre{
     color: #fff;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -12,4 +13,20 @@
 .container{
     background-color: aliceblue;
     color: #000;
+}
+
+
+.sinResultados{
+    background-color: aliceblue;
+    padding: 50px;
+    border-radius: 10px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.containerPadre select{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
 }

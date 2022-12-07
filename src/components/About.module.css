@@ -1,8 +1,12 @@
 .containerAbout{
     width: 50%;
     color: white;
-    padding: 20px 40px;
+    line-height: 35px;
+    font-weight: bold;
+    padding: 0px 20px;
     margin-top: 15px;
-    background-color: rgba(128, 128, 128, 0.37);
-    margin: 60px 80px;
+    background-color: rgba(40, 40, 40, 0.827);
+    color: white;
+    margin: 40px 80px;
+    border-radius: 15px;
 }

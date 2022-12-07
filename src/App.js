@@ -8,8 +8,8 @@ import About from "./components/About.jsx";
 import Detail from "./components/Detail.jsx";
 import Favorites from "./components/Favorites.jsx";
 import Forms from "./components/Forms.jsx";
-import 'animate.css';
-import gif from './images/gifRickAndMorty.gif'
+import "animate.css";
+import gif from "./images/gifRickAndMorty.gif";
 
 function App() {
   const navigate = useNavigate();
@@ -27,9 +27,9 @@ function App() {
   function login(userData) {
     if (username === userData.username && password === userData.password) {
       setAccess(true);
-      navigate("/home");
-    } else {
-      alert("Usuario o contraseña invalida");
+      setTimeout(() => {
+        navigate("/home");
+      }, 1000);
     }
   }
 
@@ -69,41 +69,36 @@ function App() {
 
   // console.log(location);
 
+  const [ingresar, setIngresar] = useState(false);
 
-
-const [ingresar, setIngresar] = useState(false)
-
-  const ingreso = () =>{
-
-    ingresar ? setIngresar(false) : setIngresar(true)
-
-
-  }
+  const ingreso = () => {
+    ingresar ? setIngresar(false) : setIngresar(true);
+  };
 
   if (location.pathname === "/") {
     return (
-      <div className={styles.contenedor} style={{ overflow: 'auto'}}> 
-        <h1 className="animate__animated animate__pulse animate__infinite">The Rick and Morty APP</h1>
+      <div className={styles.contenedor} style={{ overflow: "auto" }}>
+        <h1 className="animate__animated animate__pulse animate__infinite">
+          The Rick and Morty APP
+        </h1>
 
+        <button
+          className={styles.contenedorButton}
+          type="button"
+          onClick={ingreso}
+        >
+          <p>
+            LOGIN <img width={20} src={gif} alt="gif" />{" "}
+          </p>
+        </button>
 
-
-    <button className={styles.contenedorButton} type='button' onClick={ingreso}>
-      <p>LOGIN <img  width={20} src={gif} alt='gif' /> </p>
-      
-    </button>
-
-
-    
-   { ingresar && 
+        {ingresar && (
           <div className="animate__animated animate__bounceInDown">
-        <Routes >
-          <Route path="/" element={<Forms login={login} />} />
-        </Routes>
-        </div>
-      }
-
-
-
+            <Routes>
+              <Route path="/" element={<Forms login={login} />} />
+            </Routes>
+          </div>
+        )}
       </div>
     );
   } else {

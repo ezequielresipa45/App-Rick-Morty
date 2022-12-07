@@ -16,7 +16,7 @@ export default function Nav(props) {
         <p>Favorites</p>
       </Link>
 
-<button onClick={props.logout}>Logout</button>
+<button className={styles.btn}  onClick={props.logout}>🔓 Salir</button>
       
 
 

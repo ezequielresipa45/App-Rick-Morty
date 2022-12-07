@@ -1,7 +1,7 @@
 .contenedorCards {
   display: flex;
   width: 100%;
-  gap: 120px;
+  gap: 90px;
   height: auto;
   flex-wrap: wrap;
 }

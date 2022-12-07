@@ -1,9 +1,13 @@
 .containerDetail{
     color: aliceblue;
     display: flex;
+    font-weight: bold;
     justify-content: center;
+    border-radius: 20px;
     align-items: center;
     gap: 20rem;
     padding: 25px;
+    background-color: rgba(122, 122, 122, 0.474);
+    margin-top: 50px;
 }
 

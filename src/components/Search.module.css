@@ -4,12 +4,18 @@
 }
 
 .conteinerSearch input {
-  border-radius: 3px;
+  border-radius: 5px;
+  border: none;
   padding: 5px;
 }
 
+
+
 .conteinerSearch button {
   border: none;
-  background-color: rgb(92, 244, 78);
-  color: rgb(0, 0, 0);
+  cursor: pointer;
+  background-color: #0f5669;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
 }

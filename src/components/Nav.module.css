@@ -11,13 +11,15 @@
 .contenedorNav a {
   background-color: white;
   text-decoration: none;
-  padding: 10px;
-  border-radius: 10px;
+  color: black;
+  padding: 8px;
+  border-radius: 5px;
 }
 
 .contenedorNav a:hover {
-  background-color: bisque;
-  transition: 0.5s;
+  background-color: rgba(0, 0, 0, 0.541);
+  color: white;
+  transition: 0.8s;
 }
 
 .contenedorNav a p {
@@ -29,4 +31,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.contenedorNav .btn{
+  cursor: pointer;
+  padding: 8px;
+  color: white;
+  background-color: brown;
+  border: none;
+  border-radius: 5px;
 }
