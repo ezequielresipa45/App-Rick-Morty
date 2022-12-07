@@ -1,5 +1,8 @@
 # App-Rick-Morty
-App React Spa
+
+                                                                  App React Spa
+                
+<img  src="src/images/GifCapRickAndMorty.gif" />
 
         Esta es mi app de Rick y Morty, desarrolada con React. Utilize la API de Rick y
         Morty y la consumi a travez de Axios. Trabaje con estados (Hooks),
@@ -16,3 +19,5 @@ App React Spa
         Pass: admin
         
      
+
+
