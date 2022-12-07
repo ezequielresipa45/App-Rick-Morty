@@ -82,7 +82,7 @@ const [ingresar, setIngresar] = useState(false)
 
   if (location.pathname === "/") {
     return (
-      <div className={styles.contenedor}>
+      <div className={styles.contenedor} style={{ overflow: 'auto'}}> 
         <h1 className="animate__animated animate__pulse animate__infinite">The Rick and Morty APP</h1>
 
 

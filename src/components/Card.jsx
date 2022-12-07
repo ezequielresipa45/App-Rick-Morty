@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { connect } from 'react-redux';
 import { addPersonaje, deletePersonaje} from '../redux/actions';
+import gif from '../images/gifRickAndMorty.gif'
 
 function Card(props) {
 
@@ -40,11 +41,30 @@ if(isFav){
   return (
     <div className={styles.containerCard}>
 
-    {
-      isFav ? (<button onClick = {handleFavorite}>❤️</button>) : (
-        <button onClick = {handleFavorite}>🤍</button>
-      )
-    }
+
+
+      <div className={styles.containerImage}>
+        <img src={props.image} alt="" />
+        <Link to={`/detail/${props.id}`}>
+          <h2>{props.name}</h2>
+        </Link>
+      </div>
+
+      <div className={styles.containerDates}>
+        <p>{props.name}</p>
+        <h4> <span></span> Alive - {props.species}</h4>
+        <h5>Gender:</h5>
+        <h4>{props.gender}</h4>
+
+
+        <img width={50} src={gif} alt="gif" />
+
+
+      </div>
+
+
+
+
 
 
 
@@ -57,20 +77,34 @@ if(isFav){
         >
           X
         </button>
+
+      {
+      isFav ? (<button className={styles.favorites} onClick = {handleFavorite}>❤️</button>) : (
+        <button className={styles.favorites} onClick = {handleFavorite}>🤍</button>
+      )
+    }
+
+
+
+
       </div>
 
-      <div className={styles.containerImage}>
-        <img src={props.image} alt="" />
-        <Link to={`/detail/${props.id}`}>
-          <h2>{props.name}</h2>
-        </Link>
-      </div>
 
-      <div className={styles.containerDates}>
-        <h2>{props.gender}</h2>
-        <h2>{props.species}</h2>
-      </div>
+
+
+
+
+
+
+
+
+
+
     </div>
+
+
+
+
   );
 }
 

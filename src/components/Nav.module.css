@@ -1,11 +1,10 @@
 .contenedorNav {
-  background-color: rgb(79, 142, 181);
+  background-color: rgba(252, 252, 252, 0.63);
 
-  width: 98%;
+  width: 100%;
   display: flex;
   justify-content: right;
   align-items: center;
-  margin-top: 30px;
   gap: 25px;
 }
 
